@@ -1,11 +1,13 @@
+import dotenv from 'dotenv';
+dotenv.config()
 import nodemailer from 'nodemailer';
 
 
 export const transporter = nodemailer.createTransport({
-    port: 465,
-    host: 'premium142.web-hosting.com',
+    port: process.env.PORT_EMAIL,
+    host: process.env.HOST,
     auth:  {
-        user: 'teste@savanapoint.tech',
-        pass: 'teste2021'
+        user: process.env.USER,
+        pass: process.env.PASS
     }
 })
